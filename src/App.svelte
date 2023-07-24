@@ -164,6 +164,7 @@
           selectedVideos.push({
             url: "https://www.youtube.com/embed/" + videoID,
             verses: surahs[surah - 1].name + ": " + startAyah + "-" + endAyah,
+			speaker: video.speaker,
             firstVerseURL: "?surah=" + surah + "&ayah=" + startAyah,
           });
         }
@@ -210,8 +211,10 @@
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen
             ></iframe>
+			<div class="badge speaker">{video.speaker}</div>
             <a href={video.firstVerseURL}
-              ><div class="badge">{video.verses}</div></a
+              >
+			  <div class="badge verses">{video.verses}</div></a
             >
           </div>
         {/each}
@@ -263,9 +266,18 @@
     padding: 20px;
   }
 
-  .badge {
+  .speaker {
     background-color: gray;
     color: white;
+	float: left;
+  }
+  .verses {
+    color: #ebf9fa;
+    background-color: #258c91;
+	float: right;
+  }
+
+  .badge {
     margin-top: 10px;
     padding: 4px 8px;
     border-radius: 5px;
@@ -274,5 +286,8 @@
 
   a {
     text-decoration: none;
+  }
+  a:hover {
+	opacity: 0.9;
   }
 </style>
