@@ -202,8 +202,13 @@
   </div>
 
   <div class="content">
-    <div class="translation">{translatedAyah} <span style="color: #258c91">({surahs[selectedSurah].name}: {selectedAyah + 1})</span></div>
-	<hr>
+    <div class="translation">
+      {translatedAyah}
+      <span style="color: #258c91"
+        >({surahs[selectedSurah].name}: {selectedAyah + 1})</span
+      >
+    </div>
+    <hr />
     <div class="grid-container">
       {#if selectedVideos}
         {#each selectedVideos as video}
@@ -238,8 +243,8 @@
   }
 
   .translation {
-	line-height: 1.5;
-	font-size: large;
+    line-height: 1.5;
+    font-size: large;
   }
 
   .sidebar {
@@ -302,12 +307,11 @@
   }
 
   hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #ccc;
-  margin: 1em 0;
-  padding: 0;
-}
-
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+  }
 </style>
