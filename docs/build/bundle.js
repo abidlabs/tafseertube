@@ -4810,7 +4810,7 @@ var app = (function () {
     return child_ctx;
   }
 
-  // (182:2) {#each surahs as surah, i}
+  // (182:6) {#each surahs as surah, i}
   function create_each_block_2(ctx) {
     let option;
     let t0_value = /*i*/ ctx[14] + 1 + "";
@@ -4827,7 +4827,7 @@ var app = (function () {
         t2 = text(t2_value);
         option.__value = /*i*/ ctx[14];
         option.value = option.__value;
-        add_location(option, file, 182, 4, 6698);
+        add_location(option, file, 182, 8, 7082);
       },
       m: function mount(target, anchor) {
         insert_dev(target, option, anchor);
@@ -4845,14 +4845,14 @@ var app = (function () {
       block,
       id: create_each_block_2.name,
       type: "each",
-      source: "(182:2) {#each surahs as surah, i}",
+      source: "(182:6) {#each surahs as surah, i}",
       ctx,
     });
 
     return block;
   }
 
-  // (191:2) {:else}
+  // (191:6) {:else}
   function create_else_block_1(ctx) {
     let option;
 
@@ -4863,7 +4863,7 @@ var app = (function () {
         option.disabled = true;
         option.__value = "";
         option.value = option.__value;
-        add_location(option, file, 191, 4, 6976);
+        add_location(option, file, 191, 8, 7395);
       },
       m: function mount(target, anchor) {
         insert_dev(target, option, anchor);
@@ -4878,14 +4878,14 @@ var app = (function () {
       block,
       id: create_else_block_1.name,
       type: "else",
-      source: "(191:2) {:else}",
+      source: "(191:6) {:else}",
       ctx,
     });
 
     return block;
   }
 
-  // (187:2) {#if selectedSurah !== ""}
+  // (187:6) {#if selectedSurah !== ""}
   function create_if_block_1(ctx) {
     let each_1_anchor;
 
@@ -4957,14 +4957,14 @@ var app = (function () {
       block,
       id: create_if_block_1.name,
       type: "if",
-      source: '(187:2) {#if selectedSurah !== \\"\\"}',
+      source: '(187:6) {#if selectedSurah !== \\"\\"}',
       ctx,
     });
 
     return block;
   }
 
-  // (188:4) {#each Array.from({ length: surahs[selectedSurah].ayahs }) as _, i}
+  // (188:8) {#each Array.from({ length: surahs[selectedSurah].ayahs }) as _, i}
   function create_each_block_1(ctx) {
     let option;
     let t0;
@@ -4978,7 +4978,7 @@ var app = (function () {
         t1 = text(t1_value);
         option.__value = /*i*/ ctx[14];
         option.value = option.__value;
-        add_location(option, file, 188, 3, 6910);
+        add_location(option, file, 188, 10, 7317);
       },
       m: function mount(target, anchor) {
         insert_dev(target, option, anchor);
@@ -4996,14 +4996,14 @@ var app = (function () {
       id: create_each_block_1.name,
       type: "each",
       source:
-        "(188:4) {#each Array.from({ length: surahs[selectedSurah].ayahs }) as _, i}",
+        "(188:8) {#each Array.from({ length: surahs[selectedSurah].ayahs }) as _, i}",
       ctx,
     });
 
     return block;
   }
 
-  // (208:2) {:else}
+  // (218:6) {:else}
   function create_else_block(ctx) {
     let p;
 
@@ -5011,7 +5011,7 @@ var app = (function () {
       c: function create() {
         p = element("p");
         p.textContent = "No video available for the selected Surah and Ayah.";
-        add_location(p, file, 208, 3, 7657);
+        add_location(p, file, 218, 8, 8276);
       },
       m: function mount(target, anchor) {
         insert_dev(target, p, anchor);
@@ -5026,14 +5026,14 @@ var app = (function () {
       block,
       id: create_else_block.name,
       type: "else",
-      source: "(208:2) {:else}",
+      source: "(218:6) {:else}",
       ctx,
     });
 
     return block;
   }
 
-  // (201:2) {#if selectedVideos}
+  // (201:6) {#if selectedVideos}
   function create_if_block(ctx) {
     let each_1_anchor;
     let each_value = /*selectedVideos*/ ctx[2];
@@ -5096,14 +5096,14 @@ var app = (function () {
       block,
       id: create_if_block.name,
       type: "if",
-      source: "(201:2) {#if selectedVideos}",
+      source: "(201:6) {#if selectedVideos}",
       ctx,
     });
 
     return block;
   }
 
-  // (202:3) {#each selectedVideos as video}
+  // (202:8) {#each selectedVideos as video}
   function create_each_block(ctx) {
     let div1;
     let iframe;
@@ -5139,15 +5139,15 @@ var app = (function () {
           "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share",
         );
         iframe.allowFullscreen = true;
-        attr_dev(iframe, "class", "svelte-tg2433");
-        add_location(iframe, file, 203, 4, 7314);
-        attr_dev(div0, "class", "badge svelte-tg2433");
-        add_location(div0, file, 204, 34, 7579);
+        attr_dev(iframe, "class", "svelte-1ijjhfd");
+        add_location(iframe, file, 203, 12, 7768);
+        attr_dev(div0, "class", "badge svelte-1ijjhfd");
+        add_location(div0, file, 213, 15, 8164);
         attr_dev(a, "href", (a_href_value = /*video*/ ctx[9].firstVerseURL));
-        attr_dev(a, "class", "svelte-tg2433");
-        add_location(a, file, 204, 4, 7549);
-        attr_dev(div1, "class", "video-container svelte-tg2433");
-        add_location(div1, file, 202, 3, 7280);
+        attr_dev(a, "class", "svelte-1ijjhfd");
+        add_location(a, file, 212, 12, 8119);
+        attr_dev(div1, "class", "video-container svelte-1ijjhfd");
+        add_location(div1, file, 202, 10, 7726);
       },
       m: function mount(target, anchor) {
         insert_dev(target, div1, anchor);
@@ -5188,7 +5188,7 @@ var app = (function () {
       block,
       id: create_each_block.name,
       type: "each",
-      source: "(202:3) {#each selectedVideos as video}",
+      source: "(202:8) {#each selectedVideos as video}",
       ctx,
     });
 
@@ -5272,27 +5272,27 @@ var app = (function () {
         t9 = space();
         div1 = element("div");
         if_block1.c();
-        add_location(h20, file, 179, 2, 6578);
+        add_location(h20, file, 179, 4, 6953);
         if (/*selectedSurah*/ ctx[0] === void 0)
           add_render_callback(() =>
             /*select0_change_handler*/ ctx[6].call(select0),
           );
-        add_location(select0, file, 180, 3, 6603);
+        add_location(select0, file, 180, 4, 6979);
         if (/*selectedAyah*/ ctx[1] === void 0)
           add_render_callback(() =>
             /*select1_change_handler*/ ctx[7].call(select1),
           );
-        add_location(select1, file, 185, 3, 6771);
-        attr_dev(div0, "class", "sidebar svelte-tg2433");
-        add_location(div0, file, 178, 1, 6554);
-        add_location(h1, file, 197, 2, 7089);
-        add_location(h21, file, 198, 2, 7145);
-        attr_dev(div1, "class", "grid-container svelte-tg2433");
-        add_location(div1, file, 199, 2, 7190);
-        attr_dev(div2, "class", "content svelte-tg2433");
-        add_location(div2, file, 196, 1, 7065);
-        attr_dev(main, "class", "svelte-tg2433");
-        add_location(main, file, 177, 2, 6546);
+        add_location(select1, file, 185, 4, 7163);
+        attr_dev(div0, "class", "sidebar svelte-1ijjhfd");
+        add_location(div0, file, 178, 2, 6927);
+        add_location(h1, file, 197, 4, 7515);
+        add_location(h21, file, 198, 4, 7573);
+        attr_dev(div1, "class", "grid-container svelte-1ijjhfd");
+        add_location(div1, file, 199, 4, 7620);
+        attr_dev(div2, "class", "content svelte-1ijjhfd");
+        add_location(div2, file, 196, 2, 7489);
+        attr_dev(main, "class", "svelte-1ijjhfd");
+        add_location(main, file, 177, 0, 6918);
       },
       l: function claim(nodes) {
         throw new Error(
