@@ -150,7 +150,6 @@
 	let selectedVideos = [];
 	$: {
 		selectedVideos = [];
-		console.log(videoData)
 		if (videoData) {
 			for (const video of videoData.videos) {
 			const surah = video.verses.split(':')[0];
@@ -162,7 +161,11 @@
 			) {
 				const urlParams = new URL(video.url).searchParams;
 			    const videoID = urlParams.get('v');
-				selectedVideos.push("https://www.youtube.com/embed/" + videoID);
+				selectedVideos.push({
+					"url": "https://www.youtube.com/embed/" + videoID,
+					"verses": surahs[surah-1].name + ": " + startAyah + "-" + endAyah,
+					"firstVerseURL": "?surah=" + surah + "&ayah=" + startAyah
+				});
 			}
 			console.log(selectedVideos);
 			}
@@ -196,9 +199,10 @@
 		<h2>Selected Ayah: {selectedAyah + 1}</h2>
 		<div class="grid-container">
 		{#if selectedVideos}
-			{#each selectedVideos as videoURL}
+			{#each selectedVideos as video}
 			<div class="video-container">
-				<iframe width="560" height="315" src={videoURL} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>			
+				<iframe width="560" height="315" src={video.url} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>			
+				<a href={video.firstVerseURL}><div class="badge">{video.verses}</div></a>
 			</div>
 			{/each}
 		{:else}
@@ -246,5 +250,19 @@
 	.content {
 	  padding: 20px;
 	}
+
+	.badge {
+		background-color: gray;
+		color: white;
+		margin-top: 10px;
+		padding: 4px 8px;
+		border-radius: 5px;
+		width: fit-content;
+	}
+
+	a {
+		text-decoration: none;
+	}
+
   </style>
   
