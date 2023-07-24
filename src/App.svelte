@@ -1,6 +1,7 @@
 <script>
   import { afterUpdate } from "svelte";
   import yaml from "js-yaml";
+  import translationData from "./translation.json";
 
   const surahs = [
     { id: 1, name: "Al-Fatiha", ayahs: 7 },
@@ -122,12 +123,18 @@
   let selectedSurah;
   let selectedAyah;
   let videoData;
+  let translatedAyah;
 
   fetch("/videos.yaml")
     .then((response) => response.text())
     .then((data) => {
       videoData = yaml.load(data);
     });
+
+  $: translatedAyah =
+    translationData[(selectedSurah + 1).toString()][
+      (selectedAyah + 1).toString()
+    ];
 
   $: {
     const queryParams = new URLSearchParams(window.location.search);
@@ -164,11 +171,10 @@
           selectedVideos.push({
             url: "https://www.youtube.com/embed/" + videoID,
             verses: surahs[surah - 1].name + ": " + startAyah + "-" + endAyah,
-			speaker: video.speaker,
+            speaker: video.speaker,
             firstVerseURL: "?surah=" + surah + "&ayah=" + startAyah,
           });
         }
-        console.log(selectedVideos);
       }
     }
   }
@@ -196,8 +202,8 @@
   </div>
 
   <div class="content">
-    <h1>Selected Surah: {surahs[selectedSurah].name}</h1>
-    <h2>Selected Ayah: {selectedAyah + 1}</h2>
+    <div class="translation">{translatedAyah} <span style="color: #258c91">({surahs[selectedSurah].name}: {selectedAyah + 1})</span></div>
+	<hr>
     <div class="grid-container">
       {#if selectedVideos}
         {#each selectedVideos as video}
@@ -211,10 +217,9 @@
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen
             ></iframe>
-			<div class="badge speaker">{video.speaker}</div>
-            <a href={video.firstVerseURL}
-              >
-			  <div class="badge verses">{video.verses}</div></a
+            <div class="badge speaker">{video.speaker}</div>
+            <a href={video.firstVerseURL}>
+              <div class="badge verses">{video.verses}</div></a
             >
           </div>
         {/each}
@@ -230,6 +235,11 @@
   main {
     display: flex;
     flex-direction: column;
+  }
+
+  .translation {
+	line-height: 1.5;
+	font-size: large;
   }
 
   .sidebar {
@@ -248,7 +258,7 @@
   }
 
   .video-container {
-    background-color: #f0f0f0;
+    background-color: #f8f8f8;
     padding: 10px;
   }
 
@@ -269,12 +279,12 @@
   .speaker {
     background-color: gray;
     color: white;
-	float: left;
+    float: left;
   }
   .verses {
     color: #ebf9fa;
     background-color: #258c91;
-	float: right;
+    float: right;
   }
 
   .badge {
@@ -288,6 +298,16 @@
     text-decoration: none;
   }
   a:hover {
-	opacity: 0.9;
+    opacity: 0.9;
   }
+
+  hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
 </style>
