@@ -2,7 +2,7 @@
   import { afterUpdate } from "svelte";
   import yaml from "js-yaml";
   import translationData from "./translation.json";
-  import { swipe } from 'svelte-gestures';
+  import { swipe } from "svelte-gestures";
 
   const surahs = [
     { id: 1, name: "Al-Fatiha", ayahs: 7 },
@@ -180,14 +180,49 @@
     }
   }
 
-
-  function handler() {
-	alert("swiped");
+  function incrementAyah() {
+    if (selectedAyah < surahs[selectedSurah].ayahs - 1) {
+      selectedAyah++;
+    } else if (selectedSurah < surahs.length - 1) {
+      selectedSurah++;
+      selectedAyah = 0;
+    }
   }
+
+  function decrementAyah() {
+    if (selectedAyah > 0) {
+      selectedAyah--;
+    } else if (selectedSurah > 0) {
+      selectedSurah--;
+      selectedAyah = surahs[selectedSurah].ayahs - 1;
+    }
+  }
+
+  function handleSwipe(event) {
+    if (event.detail.direction == "right") {
+      decrementAyah();
+    } else if (event.detail.direction == "left") {
+      incrementAyah();
+    }
+  }
+
+  function handleKeyDown(event) {
+    if (event.keyCode === 37) {
+      decrementAyah();
+    } else if (event.keyCode === 39) {
+      incrementAyah();
+    }
+  }
+
   afterUpdate(updateQueryParams);
 </script>
 
-<main use:swipe={{ timeframe: 300, minSwipeDistance: 60, touchAction: 'pan-y' }} on:swipe={handler}>
+<svelte:window on:keydown={handleKeyDown} />
+
+<main
+  use:swipe={{ timeframe: 300, minSwipeDistance: 60, touchAction: "pan-y" }}
+  on:swipe={handleSwipe}
+>
   <div class="sidebar">
     <h2>Tafseer Tube</h2>
     <select bind:value={selectedSurah} on:change={onSurahChange}>
