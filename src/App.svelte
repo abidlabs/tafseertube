@@ -187,7 +187,7 @@
   afterUpdate(updateQueryParams);
 </script>
 
-<main use:swipe={{ timeframe: 300, minSwipeDistance: 60 }} on:swipe={handler}>
+<main use:swipe={{ timeframe: 300, minSwipeDistance: 60, touchAction: 'pan-y' }} on:swipe={handler}>
   <div class="sidebar">
     <h2>Tafseer Tube</h2>
     <select bind:value={selectedSurah} on:change={onSurahChange}>
