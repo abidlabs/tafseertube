@@ -288,15 +288,17 @@
         <form action="https://formspree.io/f/xbjvlwbn" method="POST">
           <input
             type="text"
-            name="surah_ayah"
-            value="{selectedSurah + 1}:{selectedAyah + 1}-{selectedAyah + 1}"
-          />
-          &nbsp;Surah & ayah range <br />
-          <input
-            type="text"
             name="url"
             placeholder="e.g. https://www.youtube.com/watch?v=nrmaJhRjxp4"
           />
+		  <br>
+          <input
+            type="text"
+            name="surah_ayah"
+			placeholder="Surah & ayah range"
+            value="{selectedSurah + 1}:{selectedAyah + 1}-{selectedAyah + 1}"
+          />
+		  <br>
           <!-- your other form fields go here -->
           <button type="submit">Send</button>
         </form>
@@ -314,6 +316,7 @@
 
   input {
     width: 400px;
+	max-width: 100%;
   }
 
   .translation {
