@@ -249,8 +249,8 @@
       >
     </div>
     <hr />
-    <div class="grid-container">
-      {#if selectedVideos}
+    {#if selectedVideos.length}
+      <div class="grid-container">
         {#each selectedVideos as video}
           <div class="video-container">
             <iframe
@@ -268,10 +268,32 @@
             >
           </div>
         {/each}
-      {:else}
-        <p>No video available for the selected Surah and Ayah.</p>
-      {/if}
-    </div>
+      </div>
+    {:else}
+      <div>
+        <p>
+          No video available for the selected Surah and Ayah. Please contribute
+          a YouTube video:
+        </p>
+      </div>
+      <div>
+        <form action="https://formspree.io/f/xbjvlwbn" method="POST">
+          <input
+            type="text"
+            name="surah_ayah"
+            value="{selectedSurah + 1}:{selectedAyah + 1}-{selectedAyah + 1}"
+          />
+          &nbsp;Surah & ayah range <br />
+          <input
+            type="text"
+            name="url"
+            placeholder="e.g. https://www.youtube.com/watch?v=nrmaJhRjxp4"
+          />
+          <!-- your other form fields go here -->
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    {/if}
   </div>
 </main>
 
@@ -280,6 +302,10 @@
   main {
     display: flex;
     flex-direction: column;
+  }
+
+  input {
+    width: 400px;
   }
 
   .translation {
