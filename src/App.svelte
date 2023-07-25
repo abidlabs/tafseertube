@@ -2,6 +2,7 @@
   import { afterUpdate } from "svelte";
   import yaml from "js-yaml";
   import translationData from "./translation.json";
+  import { swipe } from 'svelte-gestures';
 
   const surahs = [
     { id: 1, name: "Al-Fatiha", ayahs: 7 },
@@ -179,10 +180,14 @@
     }
   }
 
+
+  function handler() {
+	alert("swiped");
+  }
   afterUpdate(updateQueryParams);
 </script>
 
-<main>
+<main use:swipe={{ timeframe: 300, minSwipeDistance: 60 }} on:swipe={handler}>
   <div class="sidebar">
     <h2>Tafseer Tube</h2>
     <select bind:value={selectedSurah} on:change={onSurahChange}>
