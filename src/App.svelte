@@ -156,12 +156,20 @@
   }
 
   let selectedVideos = [];
+  let startAyah;
+  let endAyah;
+
   $: {
     selectedVideos = [];
     if (videoData) {
       for (const video of videoData.videos) {
         const surah = video.verses.split(":")[0];
-        const [startAyah, endAyah] = video.verses.split(":")[1].split("-");
+		if (video.verses.split(":")[1].includes("-")) {
+			[startAyah, endAyah] = video.verses.split(":")[1].split("-");
+		} else {
+			startAyah = video.verses.split(":")[1];
+			endAyah = startAyah;
+		}
         if (
           selectedSurah + 1 == parseInt(surah) &&
           selectedAyah + 1 >= parseInt(startAyah) &&
