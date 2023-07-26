@@ -1,4 +1,67 @@
-main.svelte-14ux6v8{display:flex;flex-direction:column}input.svelte-14ux6v8{width:400px;max-width:100%}.translation.svelte-14ux6v8{line-height:1.5;font-size:large}.sidebar.svelte-14ux6v8{background-color:#ebf9fa;padding:20px;color:#258c91}.grid-container.svelte-14ux6v8{display:grid;grid-template-columns:repeat(
-      2,
-      1fr
-    );grid-gap:20px}.video-container.svelte-14ux6v8{background-color:#f8f8f8;padding:10px}@media screen and (max-width: 768px){.grid-container.svelte-14ux6v8{grid-template-columns:1fr}}iframe.svelte-14ux6v8{width:100%}.content.svelte-14ux6v8{padding:20px}.speaker.svelte-14ux6v8{background-color:gray;color:white;float:left}.verses.svelte-14ux6v8{color:#ebf9fa;background-color:#258c91;float:right}.badge.svelte-14ux6v8{margin-top:10px;padding:4px 8px;border-radius:5px;width:fit-content}a.svelte-14ux6v8{text-decoration:none}a.svelte-14ux6v8:hover{opacity:0.9}hr.svelte-14ux6v8{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}
+main.svelte-14ux6v8 {
+  display: flex;
+  flex-direction: column;
+}
+input.svelte-14ux6v8 {
+  width: 400px;
+  max-width: 100%;
+}
+.translation.svelte-14ux6v8 {
+  line-height: 1.5;
+  font-size: large;
+}
+.sidebar.svelte-14ux6v8 {
+  background-color: #ebf9fa;
+  padding: 20px;
+  color: #258c91;
+}
+.grid-container.svelte-14ux6v8 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+.video-container.svelte-14ux6v8 {
+  background-color: #f8f8f8;
+  padding: 10px;
+}
+@media screen and (max-width: 768px) {
+  .grid-container.svelte-14ux6v8 {
+    grid-template-columns: 1fr;
+  }
+}
+iframe.svelte-14ux6v8 {
+  width: 100%;
+}
+.content.svelte-14ux6v8 {
+  padding: 20px;
+}
+.speaker.svelte-14ux6v8 {
+  background-color: gray;
+  color: white;
+  float: left;
+}
+.verses.svelte-14ux6v8 {
+  color: #ebf9fa;
+  background-color: #258c91;
+  float: right;
+}
+.badge.svelte-14ux6v8 {
+  margin-top: 10px;
+  padding: 4px 8px;
+  border-radius: 5px;
+  width: fit-content;
+}
+a.svelte-14ux6v8 {
+  text-decoration: none;
+}
+a.svelte-14ux6v8:hover {
+  opacity: 0.9;
+}
+hr.svelte-14ux6v8 {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
