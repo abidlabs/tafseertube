@@ -21,3 +21,4 @@ for s, surah in enumerate(surahs):
 
 print("There are " + str(ayahs) + " ayahs in the Quran.")
 print("Of them, " + str(ayahs_with_videos) + " have videos.")
+print("That's " + str(round(ayahs_with_videos / ayahs * 100, 2)) + r"% of the Quran.")
