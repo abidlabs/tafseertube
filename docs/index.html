@@ -1,21 +1,311 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta
-      name="description"
-      content="Relevant videos explaining every ayah of the Quran."
-    />
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Watch curated tafseer videos for every ayah of the Quran, from scholars like Nouman Ali Khan, Yasir Qadhi, Mufti Menk, and more.">
+  <meta property="og:title" content="TafseerTube - Quranic Video Commentary">
+  <meta property="og:description" content="Watch curated tafseer videos for every ayah of the Quran, from scholars like Nouman Ali Khan, Yasir Qadhi, Mufti Menk, and more.">
+  <meta property="og:type" content="website">
+  <title>TafseerTube - Quranic Video Commentary</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  
+</head>
+<body>
+<div class="pattern-bg" aria-hidden="true"></div>
+<main class="landing">
+  
+  <nav class="top-nav">
+    <a href="/" class="nav-link">Home</a>
+  </nav>
+  <section class="hero">
+    <div class="bismillah" aria-hidden="true">&#1576;&#1587;&#1605; &#1575;&#1604;&#1604;&#1607; &#1575;&#1604;&#1585;&#1581;&#1605;&#1606; &#1575;&#1604;&#1585;&#1581;&#1610;&#1605;</div>
+    <p class="eyebrow">Quranic video commentary</p>
+    <h1 class="site-title">Tafseer<em>Tube</em></h1>
+    <p class="site-tagline">Watch curated tafseer videos for every ayah of the Quran, from scholars like Nouman Ali Khan, Yasir Qadhi, and more.</p>
+    <div class="search-wrap">
+      <div class="search-box">
+        <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+          <circle cx="9" cy="9" r="5.5"></circle>
+          <path d="M14 14L17.5 17.5"></path>
+        </svg>
+        <input class="search-input" type="text" placeholder="Search a surah, e.g. Al-Fatiha, Baqarah, 36..." autocomplete="off" spellcheck="false" id="searchInput">
+      </div>
+      <div class="results" id="searchResults" style="display:none"></div>
+    </div>
+  </section>
 
-    <title>Tafseer Tube</title>
+  
+  <section class="recent-section">
+    <p class="ornament" aria-hidden="true">&#10022; &#10022; &#10022;</p>
+    <p class="recent-label">Available tafseer videos</p>
+    <div class="marquee-wrap">
+      <div class="marquee-track">
+        
+          <a class="video-card" href="/surah/88/ayah/21/">
+            <span class="video-card-surah">Al-Ghashiyah &middot; Ayah 21-22</span>
+            <p class="video-card-title">So, ˹continue to˺ remind ˹all, O Prophet˺, for your duty is only to remind</p>
+            <div class="video-card-footer">
+              <span class="video-card-speaker">Nouman Ali Khan</span>
+            </div>
+          </a>
+          <a class="video-card" href="/surah/58/ayah/1/">
+            <span class="video-card-surah">Al-Mujadila &middot; Ayah 1-4</span>
+            <p class="video-card-title">Indeed, Allah has heard the argument of the woman who pleaded with you ˹O Prophet˺ concerning her husband, and appealed ...</p>
+            <div class="video-card-footer">
+              <span class="video-card-speaker">Omar Suleiman</span>
+            </div>
+          </a>
+          <a class="video-card" href="/surah/58/ayah/1/">
+            <span class="video-card-surah">Al-Mujadila &middot; Ayah 1-5</span>
+            <p class="video-card-title">Indeed, Allah has heard the argument of the woman who pleaded with you ˹O Prophet˺ concerning her husband, and appealed ...</p>
+            <div class="video-card-footer">
+              <span class="video-card-speaker">Nouman Ali Khan</span>
+            </div>
+          </a>
+          <a class="video-card" href="/surah/1/ayah/1/">
+            <span class="video-card-surah">Al-Fatiha &middot; Ayah 1</span>
+            <p class="video-card-title">In the Name of Allah—the Most Compassionate, Most Merciful</p>
+            <div class="video-card-footer">
+              <span class="video-card-speaker">Nouman Ali Khan</span>
+            </div>
+          </a>
+          <a class="video-card" href="/surah/1/ayah/1/">
+            <span class="video-card-surah">Al-Fatiha &middot; Ayah 1</span>
+            <p class="video-card-title">In the Name of Allah—the Most Compassionate, Most Merciful</p>
+            <div class="video-card-footer">
+              <span class="video-card-speaker">Yasir Qadhi</span>
+            </div>
+          </a>
+          <a class="video-card" href="/surah/9/ayah/1/">
+            <span class="video-card-surah">At-Tawbah &middot; Ayah 1</span>
+            <p class="video-card-title">˹This is˺ a discharge from all obligations, by Allah and His Messenger, to the polytheists you ˹believers˺ have entered ...</p>
+            <div class="video-card-footer">
+              <span class="video-card-speaker">Nouman Ali Khan</span>
+            </div>
+          </a>
+          <a class="video-card" href="/surah/2/ayah/255/">
+            <span class="video-card-surah">Al-Baqarah &middot; Ayah 255</span>
+            <p class="video-card-title">Allah! There is no god ˹worthy of worship˺ except Him, the Ever-Living, All-Sustaining. Neither drowsiness nor sleep ove...</p>
+            <div class="video-card-footer">
+              <span class="video-card-speaker">Nouman Ali Khan</span>
+            </div>
+          </a>
+          <a class="video-card" href="/surah/2/ayah/285/">
+            <span class="video-card-surah">Al-Baqarah &middot; Ayah 285-286</span>
+            <p class="video-card-title">The Messenger ˹firmly˺ believes in what has been revealed to him from his Lord, and so do the believers. They ˹all˺ beli...</p>
+            <div class="video-card-footer">
+              <span class="video-card-speaker">Yasir Qadhi</span>
+            </div>
+          </a>
+          <a class="video-card" href="/surah/16/ayah/90/">
+            <span class="video-card-surah">An-Nahl &middot; Ayah 90</span>
+            <p class="video-card-title">Indeed, Allah commands justice, grace, as well as courtesy to close relatives. He forbids indecency, wickedness, and agg...</p>
+            <div class="video-card-footer">
+              <span class="video-card-speaker">Mufti Menk</span>
+            </div>
+          </a>
+          <a class="video-card" href="/surah/14/ayah/7/">
+            <span class="video-card-surah">Ibrahim &middot; Ayah 7</span>
+            <p class="video-card-title">And ˹remember˺ when your Lord proclaimed, ‘If you are grateful, I will certainly give you more. But if you are ungratefu...</p>
+            <div class="video-card-footer">
+              <span class="video-card-speaker">Hamza Yusuf</span>
+            </div>
+          </a>
+          <a class="video-card" href="/surah/93/ayah/1/">
+            <span class="video-card-surah">Ad-Duha &middot; Ayah 1-5</span>
+            <p class="video-card-title">By the morning sunlight</p>
+            <div class="video-card-footer">
+              <span class="video-card-speaker">Yasmin Mogahed</span>
+            </div>
+          </a>
+          <a class="video-card" href="/surah/93/ayah/1/">
+            <span class="video-card-surah">Ad-Duha &middot; Ayah 1-5</span>
+            <p class="video-card-title">By the morning sunlight</p>
+            <div class="video-card-footer">
+              <span class="video-card-speaker">Nouman Ali Khan</span>
+            </div>
+          </a>
+          <a class="video-card" href="/surah/34/ayah/10/">
+            <span class="video-card-surah">Saba &middot; Ayah 10-11</span>
+            <p class="video-card-title">Indeed, We granted David a ˹great˺ privilege from Us, ˹commanding:˺ “O mountains! Echo his hymns! And the birds as well....</p>
+            <div class="video-card-footer">
+              <span class="video-card-speaker">Nouman Ali Khan</span>
+            </div>
+          </a>
+          <a class="video-card" href="/surah/56/ayah/10/">
+            <span class="video-card-surah">Al-Waqia &middot; Ayah 10-14</span>
+            <p class="video-card-title">and the foremost ˹in faith˺ will be the foremost ˹in Paradise˺</p>
+            <div class="video-card-footer">
+              <span class="video-card-speaker">Nouman Ali Khan</span>
+            </div>
+          </a>
+          <a class="video-card" href="/surah/88/ayah/21/">
+            <span class="video-card-surah">Al-Ghashiyah &middot; Ayah 21-22</span>
+            <p class="video-card-title">So, ˹continue to˺ remind ˹all, O Prophet˺, for your duty is only to remind</p>
+            <div class="video-card-footer">
+              <span class="video-card-speaker">Nouman Ali Khan</span>
+            </div>
+          </a>
+          <a class="video-card" href="/surah/58/ayah/1/">
+            <span class="video-card-surah">Al-Mujadila &middot; Ayah 1-4</span>
+            <p class="video-card-title">Indeed, Allah has heard the argument of the woman who pleaded with you ˹O Prophet˺ concerning her husband, and appealed ...</p>
+            <div class="video-card-footer">
+              <span class="video-card-speaker">Omar Suleiman</span>
+            </div>
+          </a>
+          <a class="video-card" href="/surah/58/ayah/1/">
+            <span class="video-card-surah">Al-Mujadila &middot; Ayah 1-5</span>
+            <p class="video-card-title">Indeed, Allah has heard the argument of the woman who pleaded with you ˹O Prophet˺ concerning her husband, and appealed ...</p>
+            <div class="video-card-footer">
+              <span class="video-card-speaker">Nouman Ali Khan</span>
+            </div>
+          </a>
+          <a class="video-card" href="/surah/1/ayah/1/">
+            <span class="video-card-surah">Al-Fatiha &middot; Ayah 1</span>
+            <p class="video-card-title">In the Name of Allah—the Most Compassionate, Most Merciful</p>
+            <div class="video-card-footer">
+              <span class="video-card-speaker">Nouman Ali Khan</span>
+            </div>
+          </a>
+          <a class="video-card" href="/surah/1/ayah/1/">
+            <span class="video-card-surah">Al-Fatiha &middot; Ayah 1</span>
+            <p class="video-card-title">In the Name of Allah—the Most Compassionate, Most Merciful</p>
+            <div class="video-card-footer">
+              <span class="video-card-speaker">Yasir Qadhi</span>
+            </div>
+          </a>
+          <a class="video-card" href="/surah/9/ayah/1/">
+            <span class="video-card-surah">At-Tawbah &middot; Ayah 1</span>
+            <p class="video-card-title">˹This is˺ a discharge from all obligations, by Allah and His Messenger, to the polytheists you ˹believers˺ have entered ...</p>
+            <div class="video-card-footer">
+              <span class="video-card-speaker">Nouman Ali Khan</span>
+            </div>
+          </a>
+          <a class="video-card" href="/surah/2/ayah/255/">
+            <span class="video-card-surah">Al-Baqarah &middot; Ayah 255</span>
+            <p class="video-card-title">Allah! There is no god ˹worthy of worship˺ except Him, the Ever-Living, All-Sustaining. Neither drowsiness nor sleep ove...</p>
+            <div class="video-card-footer">
+              <span class="video-card-speaker">Nouman Ali Khan</span>
+            </div>
+          </a>
+          <a class="video-card" href="/surah/2/ayah/285/">
+            <span class="video-card-surah">Al-Baqarah &middot; Ayah 285-286</span>
+            <p class="video-card-title">The Messenger ˹firmly˺ believes in what has been revealed to him from his Lord, and so do the believers. They ˹all˺ beli...</p>
+            <div class="video-card-footer">
+              <span class="video-card-speaker">Yasir Qadhi</span>
+            </div>
+          </a>
+          <a class="video-card" href="/surah/16/ayah/90/">
+            <span class="video-card-surah">An-Nahl &middot; Ayah 90</span>
+            <p class="video-card-title">Indeed, Allah commands justice, grace, as well as courtesy to close relatives. He forbids indecency, wickedness, and agg...</p>
+            <div class="video-card-footer">
+              <span class="video-card-speaker">Mufti Menk</span>
+            </div>
+          </a>
+          <a class="video-card" href="/surah/14/ayah/7/">
+            <span class="video-card-surah">Ibrahim &middot; Ayah 7</span>
+            <p class="video-card-title">And ˹remember˺ when your Lord proclaimed, ‘If you are grateful, I will certainly give you more. But if you are ungratefu...</p>
+            <div class="video-card-footer">
+              <span class="video-card-speaker">Hamza Yusuf</span>
+            </div>
+          </a>
+          <a class="video-card" href="/surah/93/ayah/1/">
+            <span class="video-card-surah">Ad-Duha &middot; Ayah 1-5</span>
+            <p class="video-card-title">By the morning sunlight</p>
+            <div class="video-card-footer">
+              <span class="video-card-speaker">Yasmin Mogahed</span>
+            </div>
+          </a>
+          <a class="video-card" href="/surah/93/ayah/1/">
+            <span class="video-card-surah">Ad-Duha &middot; Ayah 1-5</span>
+            <p class="video-card-title">By the morning sunlight</p>
+            <div class="video-card-footer">
+              <span class="video-card-speaker">Nouman Ali Khan</span>
+            </div>
+          </a>
+          <a class="video-card" href="/surah/34/ayah/10/">
+            <span class="video-card-surah">Saba &middot; Ayah 10-11</span>
+            <p class="video-card-title">Indeed, We granted David a ˹great˺ privilege from Us, ˹commanding:˺ “O mountains! Echo his hymns! And the birds as well....</p>
+            <div class="video-card-footer">
+              <span class="video-card-speaker">Nouman Ali Khan</span>
+            </div>
+          </a>
+          <a class="video-card" href="/surah/56/ayah/10/">
+            <span class="video-card-surah">Al-Waqia &middot; Ayah 10-14</span>
+            <p class="video-card-title">and the foremost ˹in faith˺ will be the foremost ˹in Paradise˺</p>
+            <div class="video-card-footer">
+              <span class="video-card-speaker">Nouman Ali Khan</span>
+            </div>
+          </a>
+      </div>
+    </div>
+  </section>
 
-    <link rel="icon" type="image/png" href="/favicon.png" />
-    <link rel="stylesheet" href="/global.css" />
-    <link rel="stylesheet" href="/build/bundle.css" />
+  <section class="browse-section">
+    <p class="ornament" aria-hidden="true">&#10022; &#10022; &#10022;</p>
+    <p class="browse-label">Browse surahs with tafseer</p>
+    <div class="surah-chips">
+      
+          <a class="surah-chip" href="/surah/1/">
+            Al-Fatiha
+            <span class="chip-count">1</span>
+          </a>
+          <a class="surah-chip" href="/surah/2/">
+            Al-Baqarah
+            <span class="chip-count">3</span>
+          </a>
+          <a class="surah-chip" href="/surah/9/">
+            At-Tawbah
+            <span class="chip-count">1</span>
+          </a>
+          <a class="surah-chip" href="/surah/14/">
+            Ibrahim
+            <span class="chip-count">1</span>
+          </a>
+          <a class="surah-chip" href="/surah/16/">
+            An-Nahl
+            <span class="chip-count">1</span>
+          </a>
+          <a class="surah-chip" href="/surah/34/">
+            Saba
+            <span class="chip-count">2</span>
+          </a>
+          <a class="surah-chip" href="/surah/56/">
+            Al-Waqia
+            <span class="chip-count">5</span>
+          </a>
+          <a class="surah-chip" href="/surah/58/">
+            Al-Mujadila
+            <span class="chip-count">5</span>
+          </a>
+          <a class="surah-chip" href="/surah/88/">
+            Al-Ghashiyah
+            <span class="chip-count">2</span>
+          </a>
+          <a class="surah-chip" href="/surah/93/">
+            Ad-Duha
+            <span class="chip-count">5</span>
+          </a>
+    </div>
+  </section>
 
-    <script defer src="/build/bundle.js"></script>
-  </head>
+  
+  <footer class="site-footer">
+    <div class="footer-stat">
+      <span class="stat-value">TafseerTube</span>
+      <span class="stat-subvalue">Curated tafseer videos for the Quran</span>
+    </div>
+    <div class="footer-disclaimer">
+      <p>It is always best to consult with a trusted, local scholar for questions about the Quran.</p>
+    </div>
+  </footer>
+</main>
 
-  <body></body>
+<script>
+var SEARCH_DATA = [{"id":1,"name":"Al-Fatiha","count":1},{"id":2,"name":"Al-Baqarah","count":3},{"id":9,"name":"At-Tawbah","count":1},{"id":14,"name":"Ibrahim","count":1},{"id":16,"name":"An-Nahl","count":1},{"id":34,"name":"Saba","count":2},{"id":56,"name":"Al-Waqia","count":5},{"id":58,"name":"Al-Mujadila","count":5},{"id":88,"name":"Al-Ghashiyah","count":2},{"id":93,"name":"Ad-Duha","count":5}];
+</script>
+<script src="/assets/js/search.js"></script>
+</body>
 </html>
