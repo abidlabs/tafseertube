@@ -100,6 +100,8 @@ function markdownToHtml(md) {
   return result.join("\n");
 }
 
+const surahOverviewIndex = {};
+
 function buildVideoIndex(videos) {
   const index = {};
   for (const video of videos) {
@@ -118,19 +120,33 @@ function buildVideoIndex(videos) {
     const transcriptMd = loadTranscript(videoID);
     const ayahSections = transcriptMd ? splitTranscriptByAyah(transcriptMd) : null;
 
+    const isOverview =
+      ayahSections &&
+      Object.keys(ayahSections).length === 1 &&
+      ayahSections[0] !== undefined;
+
+    if (isOverview) {
+      if (!surahOverviewIndex[surahNum]) surahOverviewIndex[surahNum] = [];
+      surahOverviewIndex[surahNum].push({
+        videoID,
+        videoUrl: `https://www.youtube.com/watch?v=${videoID}`,
+        embedUrl: `https://www.youtube.com/embed/${videoID}`,
+        speaker: video.speaker,
+        versesLabel: `${surahs[surahNum - 1].name}: ${startAyah}${startAyah !== endAyah ? "-" + endAyah : ""}`,
+        transcriptHtml: markdownToHtml(ayahSections[0]),
+      });
+    }
+
     for (let a = startAyah; a <= endAyah; a++) {
       const key = `${surahNum}:${a}`;
       if (!index[key]) index[key] = [];
 
-      // Build per-ayah transcript: combine shared content (ayah 0) with ayah-specific content
       let transcriptHtml = null;
-      if (ayahSections) {
-        const parts = [];
-        if (ayahSections[0]) parts.push(ayahSections[0]);
-        if (ayahSections[a] && a !== 0) parts.push(ayahSections[a]);
-        if (parts.length > 0) {
-          transcriptHtml = markdownToHtml(parts.join("\n\n"));
-        }
+      if (!isOverview && ayahSections) {
+        const p = [];
+        if (ayahSections[0]) p.push(ayahSections[0]);
+        if (ayahSections[a] && a !== 0) p.push(ayahSections[a]);
+        if (p.length > 0) transcriptHtml = markdownToHtml(p.join("\n\n"));
       }
 
       index[key].push({
@@ -140,6 +156,7 @@ function buildVideoIndex(videos) {
         speaker: video.speaker,
         versesLabel: `${surahs[surahNum - 1].name}: ${startAyah}${startAyah !== endAyah ? "-" + endAyah : ""}`,
         firstAyahUrl: `/surah/${surahNum}/ayah/${startAyah}/`,
+        overviewUrl: isOverview ? `/surah/${surahNum}/overview/` : null,
         transcriptHtml,
       });
     }
@@ -357,9 +374,85 @@ var SEARCH_DATA = ${JSON.stringify(searchData)};
 </html>`;
 }
 
+function buildSurahOverviewPage(surahNum) {
+  const surah = surahs[surahNum - 1];
+  const overviewVideos = surahOverviewIndex[surahNum] || [];
+  const ayahNums = surahStats[surahNum] ? [...surahStats[surahNum]].sort((a, b) => a - b) : [];
+  const firstAyah = ayahNums[0];
+
+  const videosHtml = overviewVideos
+    .map((v) => `
+        <div class="transcript-item">
+          <div class="transcript-header">
+            <span class="video-speaker-badge">${escapeHtml(v.speaker)}</span>
+            <span class="video-verses-badge">${escapeHtml(v.versesLabel)}</span>
+            <a href="${v.videoUrl}" target="_blank" rel="noopener" class="video-link-badge">Watch Video</a>
+          </div>
+          <div class="transcript-body">
+            ${v.transcriptHtml}
+          </div>
+        </div>`)
+    .join("");
+
+  return `${htmlHead(
+    `${surah.name} Overview - TafseerTube`,
+    `Surah ${surah.name} overview and introduction — tafseer commentary by ${overviewVideos.map((v) => v.speaker).join(", ")}.`,
+  )}
+${patternBg()}
+<main class="page">
+  ${topNav()}
+  <div class="breadcrumb">
+    <a href="/">Home</a>
+    <span class="breadcrumb-sep">&rsaquo;</span>
+    <a href="/surah/${surahNum}/">${escapeHtml(surah.name)}</a>
+    <span class="breadcrumb-sep">&rsaquo;</span>
+    Overview
+  </div>
+
+  <div class="verse-header">
+    <p class="verse-header-surah">Surah ${surahNum} &middot; ${escapeHtml(surah.name)}</p>
+    <h1 class="verse-header-title">Overview</h1>
+    <p class="verse-header-translation">Surah-level introduction and commentary</p>
+    ${firstAyah ? `<div class="verse-nav-arrows"><a class="verse-nav-btn" href="/surah/${surahNum}/ayah/${firstAyah}/">Go to Ayah ${firstAyah} &rarr;</a></div>` : ""}
+  </div>
+
+  <div class="videos-section">
+    <p class="videos-heading">${overviewVideos.length} Overview Commentar${overviewVideos.length !== 1 ? "ies" : "y"}</p>
+    <div class="commentary-list">
+      ${videosHtml}
+    </div>
+  </div>
+
+  <footer class="site-footer" style="width:100vw;margin-left:calc(50% - 50vw);">
+    <div class="footer-stat">
+      <span class="stat-value">TafseerTube</span>
+      <span class="stat-subvalue">Curated tafseer videos for the Quran</span>
+    </div>
+    <div class="footer-disclaimer">
+      <p>It is always best to consult with a trusted, local scholar for questions about the Quran.</p>
+    </div>
+  </footer>
+</main>
+</body>
+</html>`;
+}
+
 function buildSurahPage(surahNum) {
   const surah = surahs[surahNum - 1];
   const ayahNums = [...surahStats[surahNum]].sort((a, b) => a - b);
+  const hasOverview = !!surahOverviewIndex[surahNum];
+
+  const overviewCardHtml = hasOverview
+    ? `
+        <a class="ayah-card overview-card" href="/surah/${surahNum}/overview/">
+          <div class="ayah-card-header">
+            <span class="ayah-card-num">Overview</span>
+            <span class="ayah-card-count">${surahOverviewIndex[surahNum].length} video${surahOverviewIndex[surahNum].length !== 1 ? "s" : ""}</span>
+          </div>
+          <p class="ayah-card-translation">Surah-level introduction and commentary</p>
+          <div class="ayah-card-speakers">${[...new Set(surahOverviewIndex[surahNum].map((v) => v.speaker))].map((s) => `<span class="speaker-tag">${escapeHtml(s)}</span>`).join("")}</div>
+        </a>`
+    : "";
 
   const ayahCardsHtml = ayahNums
     .map((ayahNum) => {
@@ -402,6 +495,7 @@ ${patternBg()}
   </div>
 
   <div class="ayah-grid">
+    ${overviewCardHtml}
     ${ayahCardsHtml}
   </div>
 
@@ -433,6 +527,19 @@ function buildAyahPage(surahNum, ayahNum) {
           </div>
           <div class="transcript-body">
             ${v.transcriptHtml}
+          </div>
+        </div>`;
+        }
+        if (v.overviewUrl) {
+          return `
+        <div class="transcript-item">
+          <div class="transcript-header">
+            <span class="video-speaker-badge">${escapeHtml(v.speaker)}</span>
+            <span class="video-verses-badge">${escapeHtml(v.versesLabel)}</span>
+            <a href="${v.videoUrl}" target="_blank" rel="noopener" class="video-link-badge">Watch Video</a>
+          </div>
+          <div class="transcript-body overview-notice">
+            <p>This video covers the full passage. <a href="${v.overviewUrl}">Read the overview commentary &rarr;</a></p>
           </div>
         </div>`;
         }
@@ -512,6 +619,7 @@ function buildSitemap() {
   const urls = ["/"];
   for (const surahNum of Object.keys(surahStats).map(Number).sort((a, b) => a - b)) {
     urls.push(`/surah/${surahNum}/`);
+    if (surahOverviewIndex[surahNum]) urls.push(`/surah/${surahNum}/overview/`);
     for (const ayahNum of [...surahStats[surahNum]].sort((a, b) => a - b)) {
       urls.push(`/surah/${surahNum}/ayah/${ayahNum}/`);
     }
@@ -573,6 +681,12 @@ function build() {
     const surahDir = path.join(ROOT, "surah", surahNum.toString());
     fs.mkdirSync(surahDir, { recursive: true });
     fs.writeFileSync(path.join(surahDir, "index.html"), buildSurahPage(surahNum));
+
+    if (surahOverviewIndex[surahNum]) {
+      const overviewDir = path.join(surahDir, "overview");
+      fs.mkdirSync(overviewDir, { recursive: true });
+      fs.writeFileSync(path.join(overviewDir, "index.html"), buildSurahOverviewPage(surahNum));
+    }
 
     const ayahNums = [...surahStats[surahNum]].sort((a, b) => a - b);
     for (const ayahNum of ayahNums) {
