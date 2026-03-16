@@ -5,6 +5,7 @@ import yaml from "js-yaml";
 const ROOT = path.resolve("docs");
 const DATA = path.resolve("data");
 const ASSETS = path.resolve("assets");
+const TRANSCRIPTS = path.resolve("data", "transcripts");
 
 // ---------------------------------------------------------------------------
 // Load data
@@ -31,6 +32,74 @@ function parseVideoId(url) {
   }
 }
 
+function loadTranscript(videoID) {
+  const mdPath = path.join(TRANSCRIPTS, `${videoID}.md`);
+  if (fs.existsSync(mdPath)) {
+    return fs.readFileSync(mdPath, "utf8");
+  }
+  return null;
+}
+
+// Split transcript markdown by <!-- ayah:N --> markers.
+// Returns a map: ayahNum -> markdown string for that ayah.
+// Content before the first marker (or with no markers) is assigned to ayah 0 (meaning "all").
+function splitTranscriptByAyah(md) {
+  const sections = {};
+  const marker = /<!--\s*ayah:(\d+)\s*-->/g;
+  let lastAyah = 0;
+  let lastIdx = 0;
+  let match;
+  while ((match = marker.exec(md)) !== null) {
+    const chunk = md.slice(lastIdx, match.index).trim();
+    if (chunk) {
+      if (!sections[lastAyah]) sections[lastAyah] = "";
+      sections[lastAyah] += (sections[lastAyah] ? "\n\n" : "") + chunk;
+    }
+    lastAyah = parseInt(match[1]);
+    lastIdx = match.index + match[0].length;
+  }
+  const tail = md.slice(lastIdx).trim();
+  if (tail) {
+    if (!sections[lastAyah]) sections[lastAyah] = "";
+    sections[lastAyah] += (sections[lastAyah] ? "\n\n" : "") + tail;
+  }
+  return sections;
+}
+
+function markdownToHtml(md) {
+  let html = md;
+  html = html.replace(/^#### (.+)$/gm, "<h4>$1</h4>");
+  html = html.replace(/^### (.+)$/gm, "<h3>$1</h3>");
+  html = html.replace(/^## (.+)$/gm, "<h2>$1</h2>");
+  html = html.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+  html = html.replace(/\*(.+?)\*/g, "<em>$1</em>");
+  html = html.replace(
+    /\[([^\]]+)\]\(([^)]+)\)/g,
+    '<a href="$2" target="_blank" rel="noopener">$1</a>',
+  );
+  const lines = html.split("\n");
+  const result = [];
+  for (const line of lines) {
+    const trimmed = line.trim();
+    if (!trimmed) { result.push(""); continue; }
+    if (
+      trimmed.startsWith("<h") ||
+      trimmed.startsWith("<ul") ||
+      trimmed.startsWith("<ol") ||
+      trimmed.startsWith("<li") ||
+      trimmed.startsWith("</") ||
+      trimmed.startsWith("<hr") ||
+      trimmed.startsWith("<blockquote") ||
+      trimmed.startsWith("<p")
+    ) {
+      result.push(trimmed);
+    } else {
+      result.push(`<p>${trimmed}</p>`);
+    }
+  }
+  return result.join("\n");
+}
+
 function buildVideoIndex(videos) {
   const index = {};
   for (const video of videos) {
@@ -46,14 +115,32 @@ function buildVideoIndex(videos) {
     const videoID = parseVideoId(video.url);
     if (!videoID) continue;
 
+    const transcriptMd = loadTranscript(videoID);
+    const ayahSections = transcriptMd ? splitTranscriptByAyah(transcriptMd) : null;
+
     for (let a = startAyah; a <= endAyah; a++) {
       const key = `${surahNum}:${a}`;
       if (!index[key]) index[key] = [];
+
+      // Build per-ayah transcript: combine shared content (ayah 0) with ayah-specific content
+      let transcriptHtml = null;
+      if (ayahSections) {
+        const parts = [];
+        if (ayahSections[0]) parts.push(ayahSections[0]);
+        if (ayahSections[a] && a !== 0) parts.push(ayahSections[a]);
+        if (parts.length > 0) {
+          transcriptHtml = markdownToHtml(parts.join("\n\n"));
+        }
+      }
+
       index[key].push({
+        videoID,
+        videoUrl: `https://www.youtube.com/watch?v=${videoID}`,
         embedUrl: `https://www.youtube.com/embed/${videoID}`,
         speaker: video.speaker,
         versesLabel: `${surahs[surahNum - 1].name}: ${startAyah}${startAyah !== endAyah ? "-" + endAyah : ""}`,
         firstAyahUrl: `/surah/${surahNum}/ayah/${startAyah}/`,
+        transcriptHtml,
       });
     }
   }
@@ -125,7 +212,7 @@ function htmlHead(title, description, extraHead = "") {
 
 function htmlFooter() {
   return `
-  <footer class="site-footer">
+  <footer class="site-footer" style="width:100vw;margin-left:calc(50% - 50vw);">
     <div class="footer-stat">
       <span class="stat-value">TafseerTube</span>
       <span class="stat-subvalue">Curated tafseer videos for the Quran</span>
@@ -335,7 +422,21 @@ function buildAyahPage(surahNum, ayahNum) {
 
   const videosHtml = videos
     .map(
-      (v) => `
+      (v) => {
+        if (v.transcriptHtml) {
+          return `
+        <div class="transcript-item">
+          <div class="transcript-header">
+            <span class="video-speaker-badge">${escapeHtml(v.speaker)}</span>
+            <a href="${v.firstAyahUrl}" class="video-verses-badge">${escapeHtml(v.versesLabel)}</a>
+            <a href="${v.videoUrl}" target="_blank" rel="noopener" class="video-link-badge">Watch Video</a>
+          </div>
+          <div class="transcript-body">
+            ${v.transcriptHtml}
+          </div>
+        </div>`;
+        }
+        return `
         <div class="video-item">
           <iframe src="${v.embedUrl}" title="YouTube video player" loading="lazy"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -344,7 +445,8 @@ function buildAyahPage(surahNum, ayahNum) {
             <span class="video-speaker-badge">${escapeHtml(v.speaker)}</span>
             <a href="${v.firstAyahUrl}" class="video-verses-badge">${escapeHtml(v.versesLabel)}</a>
           </div>
-        </div>`,
+        </div>`;
+      },
     )
     .join("");
 
@@ -384,27 +486,13 @@ ${patternBg()}
     videos.length > 0
       ? `
   <div class="videos-section">
-    <p class="videos-heading">${videos.length} Tafseer Video${videos.length > 1 ? "s" : ""}</p>
-    <div class="video-grid">
+    <p class="videos-heading">${videos.length} Tafseer${videos.length > 1 ? " Commentaries" : " Commentary"}</p>
+    <div class="commentary-list">
       ${videosHtml}
     </div>
   </div>`
       : ""
   }
-
-  <div class="contribute-card">
-    <p class="contribute-heading">${videos.length > 0 ? "Know another video?" : "Contribute a video"}</p>
-    <p class="contribute-text">${
-      videos.length === 0
-        ? "No tafseer video available for this ayah yet. Help us grow the collection by submitting a YouTube video:"
-        : "Know a great tafseer video for this ayah? Submit it below:"
-    }</p>
-    <form class="contribute-form" action="https://formspree.io/f/xbjvlwbn" method="POST">
-      <input class="contribute-input" type="text" name="url" placeholder="YouTube video URL">
-      <input class="contribute-input" type="text" name="surah_ayah" placeholder="Surah & ayah range" value="${surahNum}:${ayahNum}-${ayahNum}">
-      <button class="contribute-btn" type="submit">Submit Video</button>
-    </form>
-  </div>
 
   <footer class="site-footer" style="width:100vw;margin-left:calc(50% - 50vw);">
     <div class="footer-stat">
