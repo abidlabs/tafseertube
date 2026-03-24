@@ -1,11 +1,23 @@
 ### Transcript — [0:00](https://www.youtube.com/watch?v=VAlwhd_E2sg&t=0s)
 
-if you know something about David he was one of the greatest rulers in the history of humanity himself said we are making you a Khalifa in the land from Jewish historical accounts his Empire was so big there was no part of the known world that was not under his control you could think of it as the one of the greatest rulers Humanity has ever experienced was as a matter of fact even when all of the children of Adam were shown to him all of humanity was shown to Adam Islam in the beginning a special prophet of Allah and what does Allah's messenger say about this great king and ruler and prophet he says he used to eat every meal that he ate based on the work he did with his own hand what does the Quran describe about instead of describing to us the expanse of his government how he used to render his armies how many battles he fought what what descriptions do we find of Islam I'll just share one of them with you he says a special favor that comes only from us Allah says a special favor was given to Islam and a few of those things are uniquely miraculous to him for example mountains sing along with him when he makes the praise of Allah the mountains would sing along with him and the birds too but then he says said he says and then we we made iron or metal we made it soft for him in other words he learned how to melt and mold metal and then Allah said and then Allah instructed him directly work on the armor and make the links in the chain and make sure they're properly calculated in other words Allah showed him the engineering for the kind of work he was going to do the workmanship he was going to do with metal now the all of these images going up into the mountains to find the
+If you know the story of Dawud (David), he was among the greatest rulers in human history.
+
+Yet the Prophet (sallallahu alayhi wa sallam) highlighted something remarkable: Dawud used to eat from what he earned with his own hands.
+
+The Quran does not only emphasize his political power. It also describes Allah's special favors to him: mountains and birds joining in tasbih, and iron being made pliable for him.
+
+Allah taught him craftsmanship: "Make armor, and measure the links carefully." In other words, precise, skilled labor.
 
 ### Transcript — [2:01](https://www.youtube.com/watch?v=VAlwhd_E2sg&t=121s)
 
-materials he's going to use and he sees the birds there that are singing the Praises of Allah with him and he brings those materials back and he's burning those medals and fusing them and working on them like you know uh an iron Smith a worksman these are the kind of people that have you would think back even back in the days of a village the lowest jobs they're working with metals and burning them it smells bad you know people don't want to be near them or around them they're covered in smut they're covered in this black dust that comes from the work that they do that's the work they do all day and it it's not a job you do for five minutes or ten minutes and you're done you spend your waking day just working working exhausting yourself physically this is a very labor you know physical labor blue collar job a factory job you could say that used to do this is the example the prophet gave and this is the example that Allah started with that Allah gave this person a special favor that he made him work like this what I'm trying to get at is that by giving this example the messenger of Allah has dignified through Allah himself every job when you are driving a taxi when you're standing at a cash register when you're delivering pizzas when you're you know you're working as a janitor at the airport cleaning the bathrooms when you're a security guard there may be people around you say what do you do and you're embarrassed to say that's your job you feel like you know oh you have a degree you're an accountant you have an office you're a programmer you're a doctor you're an engineer or I'm just a taxi driver I'm just a I just work at a grocery store well I just drive a truck you know you feel like you're less worthy because you do this kind of work honored all Halal work and he said there's no better meal you can eat than the one you earn with your own hand that's that's the way by which Allah dignified it and he even gave the example of a prophet salaam that used to
+This was physically demanding, blue-collar work: heat, smoke, dust, and long hours.
+
+The point is powerful: Allah dignified honest labor, and the Prophet (sallallahu alayhi wa sallam) dignified every halal profession.
+
+Whether someone drives a taxi, stocks shelves, delivers food, cleans facilities, or works security, their work has honor in Islam when it is lawful and honest.
+
+The Prophet taught that no food is better than what a person earns with their own hands.
 
 ### Transcript — [4:01](https://www.youtube.com/watch?v=VAlwhd_E2sg&t=241s)
 
-do physical labor
+Dawud (alayhis-salam), a prophet and king, did physical labor.
