@@ -42,7 +42,7 @@
     <p class="videos-heading">1 Tafseer Commentary</p>
     <div class="commentary-list">
       
-        <div class="transcript-item">
+        <div class="transcript-item" data-video-id="Z9_TFpI1eqs" data-video-url="https://www.youtube.com/watch?v=Z9_TFpI1eqs">
           <div class="transcript-header">
             <span class="video-speaker-badge">Yasir Qadhi</span>
             <a href="/surah/112/ayah/1/" class="video-verses-badge">Al-Ikhlas: 1-4</a>
@@ -67,15 +67,56 @@
     </div>
   </div>
 
-  <footer class="site-footer" style="width:100vw;margin-left:calc(50% - 50vw);">
-    <div class="footer-stat">
-      <span class="stat-value">TafseerTube</span>
-      <span class="stat-subvalue">Curated tafseer videos for the Quran</span>
-    </div>
-    <div class="footer-disclaimer">
-      <p>It is always best to consult with a trusted, local scholar for questions about the Quran.</p>
-    </div>
-  </footer>
+  <footer class="tafseer-video-dock" id="tafseerVideoDock" data-video-id="Z9_TFpI1eqs" data-video-url="https://www.youtube.com/watch?v=Z9_TFpI1eqs">
+      <button type="button" class="footer-close" id="tafseerFooterClose" aria-label="Dismiss">&times;</button>
+      <div class="tafseer-video-dock__inner">
+        <a class="tafseer-video-thumb" href="https://www.youtube.com/watch?v=Z9_TFpI1eqs" target="_blank" rel="noopener noreferrer" aria-label="Open video on YouTube">
+          <img src="https://img.youtube.com/vi/Z9_TFpI1eqs/hqdefault.jpg" alt="" width="120" height="68" loading="lazy" decoding="async" />
+        </a>
+        <div class="tafseer-video-dock__center">
+          <div class="tafseer-video-scrub" aria-hidden="true">
+            <div class="tafseer-video-scrub__track">
+              <div class="tafseer-video-scrub__fill" id="tafseerVideoScrubFill"></div>
+            </div>
+          </div>
+          <div class="tafseer-video-meta">
+            <span class="tafseer-video-times" aria-live="polite">
+              <span id="tafseerTimeCurrent">0:00</span><span class="tafseer-video-times__sep"> / </span><span id="tafseerTimeDuration">--:--</span>
+            </span>
+            <p class="tafseer-video-disclaimer">Auto-cleaned transcripts may contain errors. Listen to the original video to verify.</p>
+          </div>
+        </div>
+        <div class="tafseer-video-playcol">
+          <button type="button" class="tafseer-video-playbtn" id="tafseerPlayBtn" aria-label="Play or pause video">
+            <svg class="tafseer-video-playbtn__icon-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            <svg class="tafseer-video-playbtn__icon-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+          </button>
+          <div class="tafseer-video-speed" role="group" aria-label="Playback speed">
+            <button type="button" class="tafseer-video-speed__btn" data-rate="0.5">0.5×</button>
+            <button type="button" class="tafseer-video-speed__btn is-active" data-rate="1">1×</button>
+            <button type="button" class="tafseer-video-speed__btn" data-rate="1.5">1.5×</button>
+          </div>
+        </div>
+      </div>
+      <div class="tafseer-yt-host" id="tafseerYtPlayerHost" aria-hidden="true"></div>
+    </footer>
+    <button type="button" class="footer-toggle" id="tafseerFooterToggle" aria-label="Show video bar">
+      <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 9.5L7 5.5L11 9.5"/></svg>
+    </button>
+    <script>
+      (function(){
+        var f=document.getElementById("tafseerVideoDock");
+        var t=document.getElementById("tafseerFooterToggle");
+        var b=document.getElementById("tafseerFooterClose");
+        if(!f||!t) return;
+        function hide(){f.hidden=true;t.classList.add("visible");localStorage.setItem("tafseerVideoDockDismissed","1");}
+        function show(){f.hidden=false;t.classList.remove("visible");localStorage.removeItem("tafseerVideoDockDismissed");}
+        if(localStorage.getItem("tafseerVideoDockDismissed")==="1") hide();
+        if(b) b.addEventListener("click",hide);
+        t.addEventListener("click",show);
+      })();
+    </script>
 </main>
+<script src="/assets/js/tafseer-player.js"></script>
 </body>
 </html>

@@ -142,7 +142,7 @@ function buildVideoIndex(videos) {
       if (!index[key]) index[key] = [];
 
       let transcriptHtml = null;
-      if (!isOverview && ayahSections) {
+      if (ayahSections) {
         const p = [];
         if (ayahSections[0]) p.push(ayahSections[0]);
         if (ayahSections[a] && a !== 0) p.push(ayahSections[a]);
@@ -238,6 +238,62 @@ function htmlFooter() {
       <p>It is always best to consult with a trusted, local scholar for questions about the Quran.</p>
     </div>
   </footer>`;
+}
+
+function tafseerVideoFooterHtml(video) {
+  if (!video || !video.videoID || !video.videoUrl) return htmlFooter();
+  const vid = escapeHtml(video.videoID);
+  const vurl = escapeHtml(video.videoUrl);
+  const thumb = `https://img.youtube.com/vi/${video.videoID}/hqdefault.jpg`;
+  return `<footer class="tafseer-video-dock" id="tafseerVideoDock" data-video-id="${vid}" data-video-url="${vurl}">
+      <button type="button" class="footer-close" id="tafseerFooterClose" aria-label="Dismiss">&times;</button>
+      <div class="tafseer-video-dock__inner">
+        <a class="tafseer-video-thumb" href="${vurl}" target="_blank" rel="noopener noreferrer" aria-label="Open video on YouTube">
+          <img src="${thumb}" alt="" width="120" height="68" loading="lazy" decoding="async" />
+        </a>
+        <div class="tafseer-video-dock__center">
+          <div class="tafseer-video-scrub" aria-hidden="true">
+            <div class="tafseer-video-scrub__track">
+              <div class="tafseer-video-scrub__fill" id="tafseerVideoScrubFill"></div>
+            </div>
+          </div>
+          <div class="tafseer-video-meta">
+            <span class="tafseer-video-times" aria-live="polite">
+              <span id="tafseerTimeCurrent">0:00</span><span class="tafseer-video-times__sep"> / </span><span id="tafseerTimeDuration">--:--</span>
+            </span>
+            <p class="tafseer-video-disclaimer">Auto-cleaned transcripts may contain errors. Listen to the original video to verify.</p>
+          </div>
+        </div>
+        <div class="tafseer-video-playcol">
+          <button type="button" class="tafseer-video-playbtn" id="tafseerPlayBtn" aria-label="Play or pause video">
+            <svg class="tafseer-video-playbtn__icon-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            <svg class="tafseer-video-playbtn__icon-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+          </button>
+          <div class="tafseer-video-speed" role="group" aria-label="Playback speed">
+            <button type="button" class="tafseer-video-speed__btn" data-rate="0.5">0.5×</button>
+            <button type="button" class="tafseer-video-speed__btn is-active" data-rate="1">1×</button>
+            <button type="button" class="tafseer-video-speed__btn" data-rate="1.5">1.5×</button>
+          </div>
+        </div>
+      </div>
+      <div class="tafseer-yt-host" id="tafseerYtPlayerHost" aria-hidden="true"></div>
+    </footer>
+    <button type="button" class="footer-toggle" id="tafseerFooterToggle" aria-label="Show video bar">
+      <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 9.5L7 5.5L11 9.5"/></svg>
+    </button>
+    <script>
+      (function(){
+        var f=document.getElementById("tafseerVideoDock");
+        var t=document.getElementById("tafseerFooterToggle");
+        var b=document.getElementById("tafseerFooterClose");
+        if(!f||!t) return;
+        function hide(){f.hidden=true;t.classList.add("visible");localStorage.setItem("tafseerVideoDockDismissed","1");}
+        function show(){f.hidden=false;t.classList.remove("visible");localStorage.removeItem("tafseerVideoDockDismissed");}
+        if(localStorage.getItem("tafseerVideoDockDismissed")==="1") hide();
+        if(b) b.addEventListener("click",hide);
+        t.addEventListener("click",show);
+      })();
+    </script>`;
 }
 
 function topNav() {
@@ -379,10 +435,11 @@ function buildSurahOverviewPage(surahNum) {
   const overviewVideos = surahOverviewIndex[surahNum] || [];
   const ayahNums = surahStats[surahNum] ? [...surahStats[surahNum]].sort((a, b) => a - b) : [];
   const firstAyah = ayahNums[0];
+  const dockVideo = overviewVideos.find((v) => v && v.videoID);
 
   const videosHtml = overviewVideos
     .map((v) => `
-        <div class="transcript-item">
+        <div class="transcript-item" data-video-id="${v.videoID}" data-video-url="${v.videoUrl}">
           <div class="transcript-header">
             <span class="video-speaker-badge">${escapeHtml(v.speaker)}</span>
             <span class="video-verses-badge">${escapeHtml(v.versesLabel)}</span>
@@ -423,16 +480,9 @@ ${patternBg()}
     </div>
   </div>
 
-  <footer class="site-footer" style="width:100vw;margin-left:calc(50% - 50vw);">
-    <div class="footer-stat">
-      <span class="stat-value">TafseerTube</span>
-      <span class="stat-subvalue">Curated tafseer videos for the Quran</span>
-    </div>
-    <div class="footer-disclaimer">
-      <p>It is always best to consult with a trusted, local scholar for questions about the Quran.</p>
-    </div>
-  </footer>
+  ${dockVideo ? tafseerVideoFooterHtml(dockVideo) : htmlFooter()}
 </main>
+${dockVideo ? '<script src="/assets/js/tafseer-player.js"></script>' : ""}
 </body>
 </html>`;
 }
@@ -508,6 +558,7 @@ ${patternBg()}
 function buildAyahPage(surahNum, ayahNum) {
   const surah = surahs[surahNum - 1];
   const videos = videoIndex[`${surahNum}:${ayahNum}`] || [];
+  const dockVideo = videos.find((v) => v && v.videoID && v.transcriptHtml) || videos.find((v) => v && v.videoID);
   const trans =
     translation[surahNum] && translation[surahNum][ayahNum]
       ? translation[surahNum][ayahNum]
@@ -519,7 +570,7 @@ function buildAyahPage(surahNum, ayahNum) {
       (v) => {
         if (v.transcriptHtml) {
           return `
-        <div class="transcript-item">
+        <div class="transcript-item" data-video-id="${v.videoID}" data-video-url="${v.videoUrl}">
           <div class="transcript-header">
             <span class="video-speaker-badge">${escapeHtml(v.speaker)}</span>
             <a href="${v.firstAyahUrl}" class="video-verses-badge">${escapeHtml(v.versesLabel)}</a>
@@ -532,7 +583,7 @@ function buildAyahPage(surahNum, ayahNum) {
         }
         if (v.overviewUrl) {
           return `
-        <div class="transcript-item">
+        <div class="transcript-item" data-video-id="${v.videoID}" data-video-url="${v.videoUrl}">
           <div class="transcript-header">
             <span class="video-speaker-badge">${escapeHtml(v.speaker)}</span>
             <span class="video-verses-badge">${escapeHtml(v.versesLabel)}</span>
@@ -544,13 +595,14 @@ function buildAyahPage(surahNum, ayahNum) {
         </div>`;
         }
         return `
-        <div class="video-item">
-          <iframe src="${v.embedUrl}" title="YouTube video player" loading="lazy"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen></iframe>
-          <div class="video-item-meta">
+        <div class="transcript-item" data-video-id="${v.videoID}" data-video-url="${v.videoUrl}">
+          <div class="transcript-header">
             <span class="video-speaker-badge">${escapeHtml(v.speaker)}</span>
             <a href="${v.firstAyahUrl}" class="video-verses-badge">${escapeHtml(v.versesLabel)}</a>
+            <a href="${v.videoUrl}" target="_blank" rel="noopener" class="video-link-badge">Watch Video</a>
+          </div>
+          <div class="transcript-body overview-notice">
+            <p>Transcript unavailable for this source right now. Use the video link to watch directly.</p>
           </div>
         </div>`;
       },
@@ -601,16 +653,9 @@ ${patternBg()}
       : ""
   }
 
-  <footer class="site-footer" style="width:100vw;margin-left:calc(50% - 50vw);">
-    <div class="footer-stat">
-      <span class="stat-value">TafseerTube</span>
-      <span class="stat-subvalue">Curated tafseer videos for the Quran</span>
-    </div>
-    <div class="footer-disclaimer">
-      <p>It is always best to consult with a trusted, local scholar for questions about the Quran.</p>
-    </div>
-  </footer>
+  ${dockVideo ? tafseerVideoFooterHtml(dockVideo) : htmlFooter()}
 </main>
+${dockVideo ? '<script src="/assets/js/tafseer-player.js"></script>' : ""}
 </body>
 </html>`;
 }

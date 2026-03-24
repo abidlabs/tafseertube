@@ -1,49 +1,49 @@
 videos:
-  - url: https://www.youtube.com/watch?v=it247LH5edA&ab_channel=NoumanAliKhan-Official-Bayyinah
-    speaker: Nouman Ali Khan
-    verses: 88:21-22
-  - url: https://www.youtube.com/watch?v=_Aio5R8-0k4&ab_channel=FreeQuranEducation
-    speaker: Omar Suleiman
-    verses: 58:1-4
-  - url: https://www.youtube.com/watch?v=eoyv9sKgksU&ab_channel=EnglishTafseeroftheQuran
-    speaker: Nouman Ali Khan
-    verses: 58:1-5
-  - url: https://www.youtube.com/watch?v=PglMh5KgMdc&ab_channel=NoumanAliKhan-Official-Bayyinah
-    speaker: Nouman Ali Khan
-    verses: "1:1"
-  - url: https://www.youtube.com/watch?v=RY8FVy5OV1k&ab_channel=MemphisIslamicCenter%28MIC%29
-    speaker: Yasir Qadhi
-    verses: "1:1"
-  - url: https://www.youtube.com/watch?v=NwIDsOFWiQ4&t=2s&ab_channel=Ican%26Ainap
-    speaker: Nouman Ali Khan
-    verses: "9:1"
-  - url: https://www.youtube.com/watch?v=BfkeBDROzCs&ab_channel=TheLightOfLife
-    speaker: Nouman Ali Khan
-    verses: 2:255
-  - url: https://www.youtube.com/watch?v=fFYtHH-avuI&ab_channel=TheThinkingMuslim
-    speaker: Yasir Qadhi
-    verses: 2:285-286
-  - url: https://www.youtube.com/watch?v=BszZBgG6sCY&ab_channel=MuftiMenk
-    speaker: Mufti Menk
-    verses: 16:90
-  - url: https://www.youtube.com/watch?v=rKrJJSFLs3U&ab_channel=MuslimCommunityCenter-MCCEastBay
-    speaker: Hamza Yusuf
-    verses: "14:7"
-  - url: https://www.youtube.com/watch?v=7gYBds3CI0E&ab_channel=CelebrateMercy
-    speaker: Yasmin Mogahed
-    verses: 93:1-5
-  - url: https://www.youtube.com/watch?v=eOoCfnN3k5M&ab_channel=NoumanAliKhan-Official-Bayyinah
-    speaker: Nouman Ali Khan
-    verses: 93:1-5
-  - url: https://www.youtube.com/watch?v=VAlwhd_E2sg&ab_channel=DeenDive
-    speaker: Nouman Ali Khan
-    verses: 34:10-11
-  - url: https://www.youtube.com/watch?v=CXQvHqX1u30
-    speaker: Nouman Ali Khan
-    verses: 56:10-14
-  - url: https://www.youtube.com/watch?v=Z9_TFpI1eqs
-    speaker: Yasir Qadhi
-    verses: 112:1-4
-  - url: https://www.youtube.com/watch?v=xCDGlZtNWH0
-    speaker: Nouman Ali Khan
-    verses: 53:1-18
+- url: https://www.youtube.com/watch?v=it247LH5edA&ab_channel=NoumanAliKhan-Official-Bayyinah
+  speaker: Nouman Ali Khan
+  verses: 88:21-22
+- url: https://www.youtube.com/watch?v=_Aio5R8-0k4&ab_channel=FreeQuranEducation
+  speaker: Omar Suleiman
+  verses: 58:1-4
+- url: https://www.youtube.com/watch?v=AFPBubr-8i4
+  speaker: Yasir Qadhi
+  verses: 58:1-5
+- url: https://www.youtube.com/watch?v=mRcD6icmMRI
+  speaker: Nouman Ali Khan
+  verses: '1:1'
+- url: https://www.youtube.com/watch?v=YKKZ6gzZn9c
+  speaker: Yasir Qadhi
+  verses: '1:1'
+- url: https://www.youtube.com/watch?v=b2kf3EIN0og
+  speaker: Yasir Qadhi
+  verses: '9:1'
+- url: https://www.youtube.com/watch?v=HuMhO6A9hPQ
+  speaker: Yasir Qadhi
+  verses: 2:255
+- url: https://www.youtube.com/watch?v=fFYtHH-avuI&ab_channel=TheThinkingMuslim
+  speaker: Yasir Qadhi
+  verses: 2:285-286
+- url: https://www.youtube.com/watch?v=BszZBgG6sCY&ab_channel=MuftiMenk
+  speaker: Mufti Menk
+  verses: 16:90
+- url: https://www.youtube.com/watch?v=rKrJJSFLs3U&ab_channel=MuslimCommunityCenter-MCCEastBay
+  speaker: Hamza Yusuf
+  verses: '14:7'
+- url: https://www.youtube.com/watch?v=7gYBds3CI0E&ab_channel=CelebrateMercy
+  speaker: Yasmin Mogahed
+  verses: 93:1-5
+- url: https://www.youtube.com/watch?v=-w99NufWinc
+  speaker: Yasir Qadhi
+  verses: 93:1-5
+- url: https://www.youtube.com/watch?v=VAlwhd_E2sg&ab_channel=DeenDive
+  speaker: Nouman Ali Khan
+  verses: 34:10-11
+- url: https://www.youtube.com/watch?v=CXQvHqX1u30
+  speaker: Nouman Ali Khan
+  verses: 56:10-14
+- url: https://www.youtube.com/watch?v=Z9_TFpI1eqs
+  speaker: Yasir Qadhi
+  verses: 112:1-4
+- url: https://www.youtube.com/watch?v=xCDGlZtNWH0
+  speaker: Nouman Ali Khan
+  verses: 53:1-18
