@@ -1,43 +1,77 @@
 ### Transcript — [0:07](https://www.youtube.com/watch?v=b2kf3EIN0og&t=7s)
 
-In the name of God, the Most Gracious, the Most Merciful. Praise be to God, Lord of the Worlds, and peace and blessings be upon our Prophet Muhammad and upon his family and companions. Before we finished the month of Ramadan, ten days of fasting have passed, and we have only two-thirds of the month left. It is around this time that we need to get hired. Many of the days of Ramadan are important because the ten days of Ramadan are the last ten days. We go down and have ourselves, as the Prophet, peace and blessings be upon him, said: "The most beloved deeds to God are those that are done consistently." Ten days before the ten days of Ramadan, and that is about it. We did it. Ka'b ibn Malik ibn Malik ibn Malik was an Ansar (supporter) of Muhammad, peace and blessings be upon him. It was difficult for several reasons. First, because he was going to travel to Memphis, he was trying to live in Medina. Second, it was right before the date harvest season,
+In the name of Allah, the Most Gracious, the Most Merciful. Praise be to Allah, Lord of the worlds, and peace and blessings be upon our Prophet Muhammad, his family, and his companions.
+
+This reminder discusses the story of Ka'b ibn Malik (radiyallahu anhu) and the expedition of Tabuk.
+
+The campaign was especially difficult: it involved a long journey, the heat was intense, and it was close to harvest season, when people relied on their crops for yearly income.
 
 ### Transcript — [2:17](https://www.youtube.com/watch?v=b2kf3EIN0og&t=137s)
 
-so if they went for it, they would not be able to prepare the planting to get the dates. So their harvest for that year would be severely diminished and their harvest was their annual income. They didn't get a monthly paycheck like we do. Their annual income was their harvest. So if they won for it would have been a severe financial loss for them. And number three the third reason why it was one of the most difficult was because the perception was the Muslight against the Romans. The Musl be fighting against the Romans Tabuk is Northern Arabia. and prop because he announced the public other for other that did he never announc even when he went to conquer he told the people going to conquer because he to surprise because it was so difficult we going to need youare and said Ka`b Malik wasit and not good health as propers come get and everyone prayed Said morning and go and prop to again whispered to him and said you know what you have a fast camel you can catch them up don't worry right until finally
+The Muslims also expected a confrontation with the Romans, which made the journey more intimidating.
+
+Unlike some earlier expeditions, this campaign was publicly announced because it required full preparation.
+
+Ka'b ibn Malik (radiyallahu anhu) delayed repeatedly, thinking he could catch up later. He had the means and strength, but procrastination overtook him until it became too late.
 
 ### Transcript — [4:20](https://www.youtube.com/watch?v=b2kf3EIN0og&t=260s)
 
-it struck me that it was too late. সleম [Music] com back in the was our people not where is and wasitoring and wash to be seen because behind and so thinking to himself the was for almost a mon and during this time he thinking what can i say to the prop to have him for me until finally the came that the prop to and the first did it was when he came back to the city would go to the would go home woulday in the and wouldp the was arrived when the romans and the prop was they were to scared to show up there never actually was a battle and this is the wisdom of Allah tested them without actually testing them tested them by bringing them all was so was of those behind the prop there never actually been a battle he safe and
+When the Prophet (sallallahu alayhi wa sallam) returned, Ka'b thought about what excuse he could present.
+
+Many hypocrites offered excuses. Ka'b chose to tell the truth.
+
+The campaign itself did not result in a direct battle, yet Allah still tested people through intention, sacrifice, and sincerity.
 
 ### Transcript — [6:23](https://www.youtube.com/watch?v=b2kf3EIN0og&t=383s)
 
-sound and l forms of hypocrites every one of them and in this line as well are the lame and the cri and the blind because they have to make an excuse why didn't come they and of course the qu the l and the criile the Patient is critical think that you take care mother invent smile and accept in he b to verify it between you and Allahs telling me truth. dreading the build until finally and saw him smile at me the smile of angry person the prop was ang at him because he is not the hypocr and said to what is your and there came rushing back him and said any would any accept you as because to you will me you cann God
+Ka'b narrates that when he stood before the Prophet (sallallahu alayhi wa sallam), he saw a restrained expression and was asked about his absence.
+
+He said plainly: "I have no excuse."
+
+The Prophet (sallallahu alayhi wa sallam) confirmed his truthfulness and deferred judgment until Allah's decision came.
 
 ### Transcript — [8:37](https://www.youtube.com/watch?v=b2kf3EIN0og&t=517s)
 
-That's what happens with every time a messenger would come prepared I can do it and this is one of the plots ofan is to make you procrastinate. And in this felt so he said I have no excuse. When the said this the prop said as for he has told the truth. He didn't say this to any of the hypocrites before. He said what Allah will but when he said this he said as for he has spoken the truth. আল্লাহ me so back and sad and as my tribes surrounded me and said why you soish why you have to ar your and a list of all the hyocrit so and so said this so and so said that why could ‏invent surely you are better qualified they are to invent did you have to ar us and our tribe and your being honest and so said I almost was going to go back and think of an excuse until I ask them did anyone else say what I said that guilty did anyone be honest to the process and say yes I guilty as charged and they said yes and they mentioned two of the noble of the sa two of the sahabah that they knew to those comprit was comp when those yes they said the exact youiltyas we don't have i knew i was the right compy and this shows us br and the sisters the cares about quality and not qu the cares about who he hangs around the wants to be in the comp of the and so went
+The speaker emphasizes a major lesson: procrastination is one of Shaytan's traps.
+
+Ka'b's tribe pressured him to invent an excuse like others did, but he remained truthful.
+
+He also learned that two other sincere companions had done the same, which gave him strength to remain with truthfulness.
 
 ### Transcript — [10:52](https://www.youtube.com/watch?v=b2kf3EIN0og&t=652s)
 
-owner 40 daysBen Malek 40 days w ash HP might moved not came down to Allah their punishment is boy complete isolation for the time being until he decides their fate and after 30 days Kaab ‏said I became so asixated so worried that I had a cous my best friend that he grew up with right was best friend his ne was my my bud and itur meev me so much that i went to house and i came into house and i said oh my c my de sur you know notocr now the has been told don't say anything and so he ignored him up and much boy him and surely you know that I am not a hypocrite and after a while the cous into the air Allah and his messenger knows best and that was what killed Allah and his messenger knows best I don't know and his messenger knows best and then after 40 days the commandment came that the telles to go back to their fames for the time being not even with them together and one of the tribe of came and told him one of three isly man he asked his wife came to the prop said my husband you know his state he is to old to actually have any physical with me but hey man
+For fifty days, Ka'b and the two other companions were boycotted by the community by Allah's command.
+
+The social isolation was severe. Even close relatives would not speak to them.
+
+After forty days, they were told to keep distance even from their spouses.
 
 ### Transcript — [12:54](https://www.youtube.com/watch?v=b2kf3EIN0og&t=774s)
 
-and he need someone to take care of him do you me to take care of him without beingysical because he has no need for any commcepting house 40 days allowed the wife to take care and feed and whatn and avoysical soes came and said why don't you ask the prop for the concession said what excuse do i have he is elderly man i'm in my prim what excuse do i have and so wife as well go to her own family mar [applause] And so the man came to me and thrust a letter in my hand I opened it up and said from the king of the people the went to fight in the king of the mal us that your friend the prop has you a and someone as noble as you the chief and the noble tribe that you are you don't deserve this tye of treat come to us come before immedi was anotherest was anotherestore the up into the
+A letter then came from a foreign ruler, inviting Ka'b to defect and offering him honor.
+
+Ka'b recognized this as another trial and immediately destroyed the letter.
 
 ### Transcript — [15:13](https://www.youtube.com/watch?v=b2kf3EIN0og&t=913s)
 
-as morning ‏wasaying [applause] com He made a rak'ah and the three who were left behind Surah of repentance and upon the three who were left behind, even when the earth became narrow for them with what it welcomed [applause] and their own souls were narrow for them and they thought of God, the God of God. accept God was so happy this messer come running to him the on all 50 days all so only backally gifted garment and was naked in house to call out ne can ior your to go to on
+Then Allah revealed their acceptance in Surah At-Tawbah:
+
+"And to the three who were left behind... until the earth, despite its vastness, became constricted for them, and their own souls became constricted, and they were certain there is no refuge from Allah except with Him; then He turned to them so they could repent."
+
+Ka'b was overwhelmed with joy when he heard the news after fifty days.
 
 ### Transcript — [17:18](https://www.youtube.com/watch?v=b2kf3EIN0og&t=1038s)
 
-prop was on face was face was [applause] full bir God is great God make to of that as I never speak a even if me it will be harmful to me because this is the only saved me today that I didn't like the hypocrites and I told you honestly I am sinful and ‏said I don't know anyone who was test more with telling the truth me that through my life always I had to face situations where the truth was bitter but I fulfilled my prom of always telling the truth this is in a nut the story of mal and what we learn from it is many things first and forem that is so infinite and vast that even someone who disobs the command of the prop for him and The worshippers who praise God Almighty have mixed good deeds with bad deeds and have mixed good deeds with bad deeds.
+Ka'b vowed that because truthfulness saved him, he would never knowingly lie again.
+
+One of the great lessons from this story is that Allah's mercy is vast, and sincere repentance is always open.
 
 ### Transcript — [19:20](https://www.youtube.com/watch?v=b2kf3EIN0og&t=1160s)
 
-May God forgive them. They are time. God's eyes are hidden and asy of shows will for him and one of the important things. Brother and sister is exactly. Saves many. Sit me white quick get out of it. Brothers and sisters, we know me, I know and you know that one leads to a ber and then a ber and a ber. This is what we experience. That telling lies, hiding our own faults, trying to ignore them doesn't make them go. God, God, on you. More on you, or parents and relatives. God Almighty, benar. Owner of God. Hasten
+Another lesson: one lie leads to another.
+
+Trying to hide faults through deception only deepens the problem, while honesty opens the door to Allah's forgiveness.
 
 ### Transcript — [21:24](https://www.youtube.com/watch?v=b2kf3EIN0og&t=1284s)
 
-God, Glory be to Him. And as per as possible make of those benit from beautiful story. Blessed be He and all His companions. [Music]
+May Allah allow us to benefit from this story, to be truthful, and to repent sincerely. May Allah send peace and blessings upon our Prophet Muhammad, his family, and companions.
